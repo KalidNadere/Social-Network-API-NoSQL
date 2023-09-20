@@ -30,7 +30,7 @@ const userSchema = new mongoose.Schema({
   ],
 });
 
-// Adding virtual property to the schema, to compute length of 'friends' array
+// Adding virtual property 'friendCount' to the schema, to compute length of 'friends' array
 userSchema.virtual('friendCount').get(function () {
   return this.friends.length;
 });
