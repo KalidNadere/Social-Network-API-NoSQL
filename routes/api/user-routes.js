@@ -1,7 +1,7 @@
 const router = require('express').Router();
 
 // Import UserController from controllers folder
-const UserController = require('../controllers/UserController');
+const UserController = require('../../controllers/user-controller');
 
 // Handling the routes for getting all users and creating a new user
 router
