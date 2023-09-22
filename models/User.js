@@ -13,7 +13,6 @@ const userSchema = new mongoose.Schema({
     type: String,
     unique: true,
     required: true,
-    trim: TextTrackCue,
     match: [/.+@.+\..+/, 'Please enter a valid email address'],
   },
   thoughts: [

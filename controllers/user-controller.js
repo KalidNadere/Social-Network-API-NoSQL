@@ -1,5 +1,5 @@
 // Importing User from models
-const { User } = require('../models');
+const { User } = require('../models/User');
 
 const userController = {
   // Function to get all user
