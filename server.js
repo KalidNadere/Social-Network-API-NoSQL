@@ -2,7 +2,9 @@
 const express = require('express');
 const db = require('./config/connection');
 // const mongoose = require('mongoose');
-const routes = require('./routes')
+const routes = require('./routes/index')
+
+require('dotenv').config();
 
 // Express application instance created
 const app = express();

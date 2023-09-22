@@ -70,7 +70,7 @@ const userController = {
       const user = await User.findById(req.params.userId);
       const friendId = req.params.friendId;
 
-      if(!user) {
+      if (!user) {
         return res.status(404).json({ error: 'User not found' });
       }
 
