@@ -1,5 +1,5 @@
 // Importing User from models
-const { User } = require('../models/User');
+const { User } = require('../models');
 
 const userController = {
   // Function to get all user
@@ -8,6 +8,7 @@ const userController = {
       const users = await User.find();
       res.json(users);
     } catch (error) {
+      console.log(error);
       res.status(500).json({ error: 'Internal server error' });
     }
   },

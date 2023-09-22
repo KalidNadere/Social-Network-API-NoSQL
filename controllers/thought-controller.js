@@ -1,4 +1,4 @@
-const { Thought } = require('../models/Thought');
+const { Thought } = require('../models');
 
 const thoughtController = {
   // function to get all thoughts
@@ -7,6 +7,7 @@ const thoughtController = {
       const thoughts = await Thought.find().sort({ createdAt: -1 });
       res.json(thoughts);
     } catch (error) {
+      console.log(error);
       res.status(500).json({ error: 'Internal server error' });
     }
   },

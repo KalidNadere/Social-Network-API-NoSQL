@@ -1,5 +1,5 @@
 // Importing Mongoose library
-const mongoose = require('mongoose');
+const {mongoose} = require('mongoose');
 
 // Defining thought schema, with fields thoughtText, CreatedAt, username and reactions
 const thoughtSchema = new mongoose.Schema({
