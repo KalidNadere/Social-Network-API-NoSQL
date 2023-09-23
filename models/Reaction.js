@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const { Schema, model } = mongoose;
+const { Schema, model, Types } = mongoose;
 
 const reactionSchema = new Schema(
   {
@@ -15,6 +15,7 @@ const reactionSchema = new Schema(
     username: String,
     thoughtId: {
       type: Schema.Types.ObjectId,
+      default: () => new Types.ObjectId(),
       required: true,
     },
   },
