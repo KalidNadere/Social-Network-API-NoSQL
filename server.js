@@ -1,10 +1,10 @@
 // Importing necessary libraries/modules
 const express = require('express');
+require('dotenv').config();
 const db = require('./config/connection');
 // const mongoose = require('mongoose');
 const routes = require('./routes/index')
 
-require('dotenv').config();
 
 // Express application instance created
 const app = express();

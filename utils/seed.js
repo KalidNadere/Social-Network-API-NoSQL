@@ -2,12 +2,7 @@ const mongoose = require('mongoose');
 const { User, Thought, Reaction } = require('../models');
 const data = require('./data');
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/social-network-api', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useCreateIndex: true,
-  useFindAndModify: false,
-});
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/social-network-api');
 
 // Seed data into the database
 async function seedData() {
@@ -25,9 +20,11 @@ async function seedData() {
       ...thought,
       userId: users[index]._id,
     }));
+
     const reactions = data.reactions.map((reaction, index) => ({
       ...reaction,
       thoughtId: thoughts[index]._id,
+      username: users[index].username,
     }));
 
     // Seed thoughts and reactions

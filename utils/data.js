@@ -1,32 +1,38 @@
-module.exports = {
+const data = {
   users: [
     {
-      username: 'user1',
-      email: 'user1@example.com',
+      username: 'johndoe',
+      email: 'johndoe@example.com',
     },
     {
-      username: 'user2',
-      email: 'user2@example.com',
+      username: 'janedoe',
+      email: 'janedoe@example.com',
     },
   ],
   thoughts: [
     {
-      text: 'Thought 1',
-      userId: 1, // User ID associated with this thought
+      thoughtText: 'Here is a thought',
+      userId: '1',
+      username: 'johndoe',
     },
     {
-      text: 'Thought 2',
-      userId: 2, // User ID associated with this thought
+      thoughtText: 'Here is another thought', 
+      userId: '2',
+      username: 'janedoe'
     },
   ],
   reactions: [
     {
-      reactionType: 'like',
-      thoughtId: 1, // Thought ID associated with this reaction
+      reactionBody: 'like this thought',
+      username: 'johndoe', 
+      thoughtId: '1',
     },
     {
-      reactionType: 'love',
-      thoughtId: 2, // Thought ID associated with this reaction
+      reactionBody: 'love this thought',
+      username: 'janedoe', 
+      thoughtId: '2',
     },
   ],
 };
+
+module.exports = data;
