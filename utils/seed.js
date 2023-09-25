@@ -2,7 +2,8 @@ const mongoose = require('mongoose');
 const { User, Thought, Reaction } = require('../models');
 const data = require('./data');
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/social-network-api');
+// Setting connection to MongoDB database using mongoose
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/socialDB');
 
 // Seed data into the database
 async function seedData() {

@@ -1,4 +1,4 @@
-const { Thought } = require('../models');
+const { Thought, User } = require('../models');
 
 const thoughtController = {
   // function to get all thoughts
@@ -15,10 +15,19 @@ const thoughtController = {
   // function to create a new thought
   createThought: async (req, res) => {
     try {
-      const newThought = new Thought(req.body);
-      await newThought.save();
+      
+      const newThought = await Thought.create(req.body);
+      console.log(newThought);
+      let user = await User.findByIdAndUpdate({ _id:req.body.userId },
+      {
+        $push:{thoughts: newThought._id}
+      },
+      {
+        new:true
+      })
       res.status(201).json(newThought);
     } catch (error) {
+      console.log(error);
       res.status(400).json({ error: 'Invalid data' });
     }
   },
